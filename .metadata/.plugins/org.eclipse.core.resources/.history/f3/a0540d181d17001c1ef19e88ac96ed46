@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.color_white {
+	color: white;
+}
+
+.vertical_center {
+	display: flex;
+	align-items: center;
+}
