@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/.metadata/
+>>>>>>> 11573516ed517d4593295836a8083814d84f686d
 ./metadata/
 ./bin/
 Servers/
@@ -5,6 +9,10 @@ tmp/
 *.classpath
 *.project
 *.tmp
+<<<<<<< HEAD
+=======
+*.index
+>>>>>>> 11573516ed517d4593295836a8083814d84f686d
 *.bak
 *.swp
 *~.nib
@@ -12,4 +20,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+<<<<<<< HEAD
 /.metadata/
+=======
+>>>>>>> 11573516ed517d4593295836a8083814d84f686d
