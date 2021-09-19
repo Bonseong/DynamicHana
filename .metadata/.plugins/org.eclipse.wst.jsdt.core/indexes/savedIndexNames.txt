@@ -1,9 +1,0 @@
-INDEX VERSION 1.4+D:\DynamicHana\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2470915933.index
-921006143.index
-2051846423.index
-1104252563.index
-2443982488.index
-1811896262.index
-3282127162.index
-3916646514.index
