@@ -9,8 +9,8 @@ import kr.ac.kopo.dashboard.dao.DashboardDAO;
 import kr.ac.kopo.dashboard.vo.DashboardVO;
 
 @Service
-public class DashboardServiceImpl implements DashboardService{
-	
+public class DashboardServiceImpl implements DashboardService {
+
 	@Autowired
 	private DashboardDAO dashboardDAO;
 
@@ -35,7 +35,7 @@ public class DashboardServiceImpl implements DashboardService{
 	}
 
 	public List<DashboardVO> selectWeelkyConsumption() {
-		
+
 		List<DashboardVO> weelkyConsumption = dashboardDAO.selectWeelkyConsumption();
 		return weelkyConsumption;
 	}
@@ -59,14 +59,27 @@ public class DashboardServiceImpl implements DashboardService{
 		DashboardVO consumptionTimeSolt = dashboardDAO.selectConsumptionTimeSlot();
 		return consumptionTimeSolt;
 	}
+
+	public List<DashboardVO> selectClusterConsumption(int no) {
+		List<DashboardVO> clusterConsumption = dashboardDAO.selectClusterConsumption(no);
+		return clusterConsumption;
+	}
+
+	public List<DashboardVO> selectAgeGroup() {
+		List<DashboardVO> ageGroup = dashboardDAO.selectAgeGroup();
+		return ageGroup;
+	}
+
+	public List<DashboardVO> selectConsumptionCountDist() {
+		List<DashboardVO> consumptionCountDist = dashboardDAO.selectConsumptionCountDist();
+		return consumptionCountDist;
+	}
+	
+	public List<DashboardVO> selectConsumptionSumDist() {
+		List<DashboardVO> consumptionSumDist = dashboardDAO.selectConsumptionSumDist();
+		return consumptionSumDist;
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

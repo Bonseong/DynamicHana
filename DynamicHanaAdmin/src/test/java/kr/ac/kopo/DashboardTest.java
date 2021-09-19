@@ -36,23 +36,33 @@ public class DashboardTest {
 	@Ignore
 	@Test
 	public void 거래수() throws Exception {
-		DashboardVO totalTran = dashboardService.selectTotalCluster();
-		System.out.println(totalTran);
-		
-		
-	}
-	@Ignore
-	@Test
-	public void 일주일거래() throws Exception {
-		List<DashboardVO> totalTran = dashboardService.selectWeelkyConsumption();
+		List<DashboardVO> totalTran = dashboardService.selectMemberCluster();
 		System.out.println(totalTran);
 		
 		
 	}
 	
+	@Ignore
+	@Test
+	public void 일주일거래() throws Exception {
+		List<DashboardVO> totalTran = dashboardService.selectClusterConsumption(1);
+		System.out.println(totalTran);
+		
+		
+	}
+	
+	@Ignore
 	@Test
 	public void 카드누적() throws Exception {
 		List<DashboardVO> toptenCard = dashboardService.selectTopTenCard();
+		System.out.println(toptenCard);
+		
+		
+	}
+	
+	@Test
+	public void 나이and성별() throws Exception {
+		List<DashboardVO> toptenCard = dashboardService.selectAgeGroup();
 		System.out.println(toptenCard);
 		
 		

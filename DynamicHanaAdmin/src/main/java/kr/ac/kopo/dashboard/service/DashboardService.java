@@ -23,4 +23,12 @@ public interface DashboardService {
 	List<DashboardVO> selectTopTenCard();
 	
 	DashboardVO selectConsumptionTimeSlot();
+	
+	List<DashboardVO> selectClusterConsumption(int no);
+	
+	List<DashboardVO> selectAgeGroup();
+	
+	List<DashboardVO> selectConsumptionCountDist();
+	
+	List<DashboardVO> selectConsumptionSumDist();
 }

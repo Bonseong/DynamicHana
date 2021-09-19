@@ -59,6 +59,29 @@ public class DashboardDAOImpl implements DashboardDAO{
 		DashboardVO consumptionTimeSolt = sqlSessionTemplate.selectOne("dashboard.DashboardDAO.selectConsumptionTimeSlot");
 		return consumptionTimeSolt;
 	}
+
+	
+	public List<DashboardVO> selectClusterConsumption(int no) {
+		List<DashboardVO> clusterConsumption = sqlSessionTemplate.selectList("dashboard.DashboardDAO.selectClusterConsumption", no);
+		return clusterConsumption;
+	}
+
+	public List<DashboardVO> selectAgeGroup() {
+		List<DashboardVO> ageGroup = sqlSessionTemplate.selectList("dashboard.DashboardDAO.selectAgeGroup");
+		return ageGroup;
+	}
+
+	public List<DashboardVO> selectConsumptionCountDist() {
+		List<DashboardVO> consumptionCountDist = sqlSessionTemplate.selectList("dashboard.DashboardDAO.selectConsumptionCountDist");
+		return consumptionCountDist;
+	}
+	
+	public List<DashboardVO> selectConsumptionSumDist() {
+		List<DashboardVO> consumptionSumDist = sqlSessionTemplate.selectList("dashboard.DashboardDAO.selectConsumptionSumDist");
+		return consumptionSumDist;
+	}
+	
+	
 	
 	
 	
