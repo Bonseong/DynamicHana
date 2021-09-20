@@ -82,19 +82,11 @@ public class DashboardController {
 
 	}
 	
-	@RequestMapping("/mail")
-	public ModelAndView mail() {
-		ModelAndView mav = new ModelAndView("mail");
-		
-		List<DashboardVO> memberCluster = dashboardService.selectMemberCluster();
-		mav.addObject("memberCluster", memberCluster);
-		
+
 	
-
-		return mav;
-
-	}
-
+	
+	
+	
 	@RequestMapping("/test")
 	public ModelAndView test(HttpSession session) {
 		ModelAndView mav = new ModelAndView("test");
