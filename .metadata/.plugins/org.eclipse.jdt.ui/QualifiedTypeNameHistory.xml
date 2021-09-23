@@ -16,4 +16,12 @@
     <fullyQualifiedTypeName name="javax.mail.internet.AddressException"/>
     <fullyQualifiedTypeName name="javax.mail.MessagingException"/>
     <fullyQualifiedTypeName name="javax.mail.Transport"/>
+    <fullyQualifiedTypeName name="kr.ac.kopo.stmt.service.stmtService"/>
+    <fullyQualifiedTypeName name="kr.ac.kopo.card.vo.UserCardVO"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="kr.ac.kopo.stmt.dao.StmtDAO"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="kr.ac.kopo.stmt.service.StmtService"/>
+    <fullyQualifiedTypeName name="kr.ac.kopo.stmt.vo.StmtVO"/>
+    <fullyQualifiedTypeName name="kr.ac.kopo.util.PagingVO"/>
 </qualifiedTypeNameHistroy>
