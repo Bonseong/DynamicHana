@@ -69,6 +69,54 @@ public class StmtServiceImpl implements StmtService {
 		List<StmtVO> timeslot = stmtDAO.selectTimeSlot(cardNo);
 		return timeslot;
 	}
+
+	public List<StmtVO> selectWeekday(String cardNo) {
+		List<StmtVO>  weekday = stmtDAO.selectWeekday(cardNo);
+		return weekday;
+	}
+
+	public int checkPCAMember(String cardNo) {
+		int result = stmtDAO.checkPCAMember(cardNo);
+		return result;
+		
+	}
+	
+	public List<StmtVO> selectPersonalCategory(String cardNo) {
+		int result = checkPCAMember(cardNo);
+		if(result==1) { // 주성분 분석이 완료된 유저라면 클러스터링된 군집의 특성 가져오기
+			List<StmtVO> personalCategory = stmtDAO.selectPersonalCategoryPCA(cardNo);
+			return personalCategory;
+		}else { // 그렇지 않으면 가장 많이 소비한 카테고리 3개 가져오기
+			List<StmtVO> personalCategory = stmtDAO.selectPersonalCategoryNonePCA(cardNo);
+			return personalCategory;
+		} 
+		
+	}
+
+	public List<StmtVO> selectPersonalCategoryConsumption(String cardNo) {
+		int result = checkPCAMember(cardNo);
+		if(result==1) { 
+			List<StmtVO> personalCategoryConsumption = stmtDAO.selectPersonalCategoryConsumptionPCA(cardNo);
+			return personalCategoryConsumption;
+		}else {
+			List<StmtVO> personalCategoryConsumption = stmtDAO.selectPersonalCategoryConsumptionNonePCA(cardNo);
+			return personalCategoryConsumption;
+		}
+		
+	}
+
+	public List<StmtVO> selectPersonalCard(String cardNo) {
+		int result = checkPCAMember(cardNo);
+		if(result==1) { 
+			List<StmtVO> personalCard = stmtDAO.selectPersonalCardPCA(cardNo);
+			return personalCard;
+		}else {
+			List<StmtVO> personalCard = stmtDAO.selectPersonalCardNonePCA(cardNo);
+			return personalCard;
+		}
+	}
+	
+	
 	
 	
 	

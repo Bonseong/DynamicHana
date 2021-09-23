@@ -155,8 +155,24 @@ public class StmtController {
 		// 시간대별 거래금액
 		List<StmtVO> timeslot = stmtService.selectTimeSlot(usercard.getCardNo());
 		mav.addObject("timeslot", timeslot);
-		System.out.println(timeslot);
 
+		// 요일별 거래금액
+		List<StmtVO> weekday = stmtService.selectWeekday(usercard.getCardNo());
+		mav.addObject("weekday", weekday);
+
+		// 개인 소비 카테고리
+		List<StmtVO> personalCategory = stmtService.selectPersonalCategory(usercard.getCardNo());
+		mav.addObject("personalCategory", personalCategory);
+		
+		// 개인 소비 카테고리 소비금액 (vs 타그룹)
+		List<StmtVO> personalCategoryConsumption = stmtService.selectPersonalCategoryConsumption(usercard.getCardNo());
+		mav.addObject("personalCategoryConsumption", personalCategoryConsumption);
+
+		// 개인 추천카드
+		List<StmtVO> personalCard = stmtService.selectPersonalCard(usercard.getCardNo());
+		mav.addObject("personalCard", personalCard);
+		
+		
 		return mav;
 	}
 

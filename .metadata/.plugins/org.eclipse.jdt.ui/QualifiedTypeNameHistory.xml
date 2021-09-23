@@ -22,6 +22,6 @@
     <fullyQualifiedTypeName name="kr.ac.kopo.stmt.dao.StmtDAO"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="kr.ac.kopo.stmt.service.StmtService"/>
-    <fullyQualifiedTypeName name="kr.ac.kopo.stmt.vo.StmtVO"/>
     <fullyQualifiedTypeName name="kr.ac.kopo.util.PagingVO"/>
+    <fullyQualifiedTypeName name="kr.ac.kopo.stmt.vo.StmtVO"/>
 </qualifiedTypeNameHistroy>
