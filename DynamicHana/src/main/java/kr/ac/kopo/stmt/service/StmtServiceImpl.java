@@ -53,14 +53,21 @@ public class StmtServiceImpl implements StmtService {
 	}
 
 	public List<StmtVO> selectMonthlyConsumption(String cardNo, PagingVO vo) {
+		
 		StmtVO stmt = new StmtVO();
+		
 		stmt.setCardNo(cardNo);
 		stmt.setStart(vo.getStart());
 		stmt.setEnd(vo.getEnd());
 		
-		System.out.println(stmt);
 		List<StmtVO> monthlyConsumption = stmtDAO.selectMonthlyConsumption(stmt);
 		return monthlyConsumption;
+	}
+
+	public List<StmtVO> selectTimeSlot(String cardNo) {
+
+		List<StmtVO> timeslot = stmtDAO.selectTimeSlot(cardNo);
+		return timeslot;
 	}
 	
 	

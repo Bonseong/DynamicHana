@@ -36,11 +36,18 @@ public class StmtTest {
 	@Autowired
 	private CardDAO cardDAO;
 
+	@Ignore
 	@Test
 	public void 카드리스트Test() throws Exception {
 		//List<StmtVO> list = stmtService.selectMonthlyConsumption("1111-1111-2222-2222");
 
-
+	}
+	
+	@Test
+	public void 타임슬롯Test() throws Exception {
+		List<StmtVO> timeslot = stmtService.selectTimeSlot("1111-1111-2222-2222");
+		System.out.println(timeslot);
+		
 	}
 	
 
