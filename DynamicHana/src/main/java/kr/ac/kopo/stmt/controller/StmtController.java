@@ -47,7 +47,6 @@ public class StmtController {
 
 		if (result == 1) {
 			session.setAttribute("usercard", usercard);
-			System.out.println(usercard);
 		}
 
 		return result;
@@ -107,29 +106,22 @@ public class StmtController {
 		mav.addObject("paging", vo);
 		mav.addObject("total", total);
 
-		System.out.println(monthlyConsumption);
-		/*
-		 * // 총 거래내역 List<StmtVO> monthlyConsumption =
-		 * stmtService.selectMonthlyConsumption(usercard.getCardNo());
-		 * mav.addObject("monthlyConsumption", monthlyConsumption);
-		 */
-
 		return mav;
 	}
-	
+
 	@GetMapping("/monthlyStmt/filterList")
 	public ModelAndView monthlyStmt2(PagingVO vo, @RequestParam(value = "nowPage", required = false) String nowPage,
 			@RequestParam(value = "cntPerPage", required = false) String cntPerPage, HttpSession session)
-					throws Exception {
+			throws Exception {
 		ModelAndView mav = new ModelAndView("card/monthlyStmtFilter");
-		
+
 		MemberVO user = (MemberVO) session.getAttribute("userVO");
 		UserCardVO usercard = (UserCardVO) session.getAttribute("usercard");
-		
+
 		// 총 거래내역
-		
+
 		int total = stmtService.selectMonthlyLength(usercard.getCardNo());
-		
+
 		if (nowPage == null && cntPerPage == null) {
 			nowPage = "1";
 			cntPerPage = "5";
@@ -138,21 +130,33 @@ public class StmtController {
 		} else if (cntPerPage == null) {
 			cntPerPage = "5";
 		}
-		
+
 		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
-		
+
 		List<StmtVO> monthlyConsumption = stmtService.selectMonthlyConsumption(usercard.getCardNo(), vo);
 		mav.addObject("monthlyConsumption", monthlyConsumption);
 		mav.addObject("paging", vo);
 		mav.addObject("total", total);
-		
-		System.out.println(monthlyConsumption);
-		/*
-		 * // 총 거래내역 List<StmtVO> monthlyConsumption =
-		 * stmtService.selectMonthlyConsumption(usercard.getCardNo());
-		 * mav.addObject("monthlyConsumption", monthlyConsumption);
-		 */
-		
+
+		return mav;
+	}
+
+	@GetMapping("/monthlyStmt2")
+	public ModelAndView monthlyStmt(HttpSession session) throws Exception {
+		ModelAndView mav = new ModelAndView("card/monthlyStmt2");
+
+		MemberVO user = (MemberVO) session.getAttribute("userVO");
+		UserCardVO usercard = (UserCardVO) session.getAttribute("usercard");
+
+		// 거래금액, 거래건수
+		StmtVO mainInfo = stmtService.selectCardMainInfo(usercard.getCardNo());
+		mav.addObject("mainInfo", mainInfo);
+
+		// 시간대별 거래금액
+		List<StmtVO> timeslot = stmtService.selectTimeSlot(usercard.getCardNo());
+		mav.addObject("timeslot", timeslot);
+		System.out.println(timeslot);
+
 		return mav;
 	}
 

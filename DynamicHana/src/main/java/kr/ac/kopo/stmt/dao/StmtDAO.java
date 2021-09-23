@@ -21,5 +21,7 @@ public interface StmtDAO {
 	int selectMonthlyLength(String cardNo);
 	
 	List<StmtVO> selectMonthlyConsumption(StmtVO stmt);
+	
+	List<StmtVO> selectTimeSlot(String cardNo);
 }
 

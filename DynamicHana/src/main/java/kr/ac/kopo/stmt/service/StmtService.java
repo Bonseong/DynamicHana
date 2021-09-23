@@ -21,4 +21,6 @@ public interface StmtService {
 	int selectMonthlyLength(String cardNo);
 	
 	List<StmtVO> selectMonthlyConsumption(String cardNo, PagingVO vo);
+	
+	List<StmtVO> selectTimeSlot(String cardNo);
 }

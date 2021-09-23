@@ -55,6 +55,11 @@ public class StmtDAOImpl implements StmtDAO{
 		List<StmtVO> monthlyConsumption = sqlSessionTemplate.selectList("stmt.StmtDAO.selectMonthlyConsumption", stmt);
 		return monthlyConsumption;
 	}
+
+	public List<StmtVO> selectTimeSlot(String cardNo) {
+		List<StmtVO> timeslot = sqlSessionTemplate.selectList("stmt.StmtDAO.selectTimeSlot", cardNo);
+		return timeslot;
+	}
 	
 	
 	
