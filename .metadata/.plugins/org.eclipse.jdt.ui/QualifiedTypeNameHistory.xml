@@ -24,4 +24,7 @@
     <fullyQualifiedTypeName name="kr.ac.kopo.stmt.service.StmtService"/>
     <fullyQualifiedTypeName name="kr.ac.kopo.util.PagingVO"/>
     <fullyQualifiedTypeName name="kr.ac.kopo.stmt.vo.StmtVO"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="org.rosuda.REngine.Rserve.RConnection"/>
+    <fullyQualifiedTypeName name="org.springframework.scheduling.annotation.Scheduled"/>
 </qualifiedTypeNameHistroy>
