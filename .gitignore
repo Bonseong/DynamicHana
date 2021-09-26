@@ -9,7 +9,11 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-/Server/
+
+root-context.xml
+/**/*root-context.xml
+/.metadata/
+Servers/
 
 # External tool builders
 .externalToolBuilders/
