@@ -27,4 +27,5 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
     <fullyQualifiedTypeName name="org.rosuda.REngine.Rserve.RConnection"/>
     <fullyQualifiedTypeName name="org.springframework.scheduling.annotation.Scheduled"/>
+    <fullyQualifiedTypeName name="org.apache.maven.shared.invoker.SystemOutHandler"/>
 </qualifiedTypeNameHistroy>
